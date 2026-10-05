@@ -1,0 +1,10 @@
+{
+    "name": "HashMash — Hashtag & Comma Converter",
+    "short_name": "HashMash",
+    "description": "Convert hashtags to commas and commas to hashtags with multilingual voice input.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#4f46e5",
+    "icons": []
+}
