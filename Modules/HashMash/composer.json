@@ -1,0 +1,11 @@
+{
+    "name": "nwidart/hashmash",
+    "type": "laravel-module",
+    "description": "Hash generation module for the HashMash application",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Modules\\HashMash\\": "app/"
+        }
+    }
+}

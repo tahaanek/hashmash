@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.base44
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - vendor:/app/vendor
+      - node_modules:/app/node_modules
+    environment:
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+    command: ["sh", "-e", "/app/docker/start.sh"]
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3000/ && curl -sf http://localhost:8000/api/algorithms"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 180s
+
+volumes:
+  vendor:
+  node_modules:

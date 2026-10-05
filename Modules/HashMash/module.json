@@ -1,0 +1,13 @@
+{
+    "name": "HashMash",
+    "alias": "hashmash",
+    "description": "Hash generation module — generates cryptographic hashes (MD5, SHA1, SHA256, SHA512, etc.)",
+    "keywords": ["hash", "crypto", "md5", "sha"],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\HashMash\\Providers\\HashMashServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}
