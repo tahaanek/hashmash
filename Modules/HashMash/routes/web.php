@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| Web Routes (HashMash Module)
 |--------------------------------------------------------------------------
 |
-| HashMash functionality is now modularized via nwidart/laravel-modules.
-| See Modules/HashMash/routes/api.php for the hash API routes.
+| The HashMash frontend is served by Vite, not by Laravel Blade.
+| This file is intentionally left empty.
 |
 */

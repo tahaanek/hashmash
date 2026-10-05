@@ -33,6 +33,16 @@ fi
 echo ">>> Installing composer dependencies..."
 COMPOSER_NO_AUDIT=1 composer install --no-interaction --optimize-autoloader
 
+# Ensure nwidart/laravel-modules is installed
+if ! grep -q 'nwidart/laravel-modules' composer.lock 2>/dev/null; then
+    echo ">>> Installing nwidart/laravel-modules..."
+    COMPOSER_NO_AUDIT=1 composer require nwidart/laravel-modules:^10.0 --no-interaction
+fi
+
+# Ensure all modules are enabled
+echo ">>> Enabling modules..."
+php artisan module:enable HashMash 2>/dev/null || true
+
 # Ensure Vue 3 and TailwindCSS v3 are in package.json (v4 changed PostCSS integration)
 if ! grep -q '"@vitejs/plugin-vue"' package.json || ! grep -q '"tailwindcss": "3' package.json; then
     echo ">>> Adding/pinning Vue 3 and TailwindCSS v3..."
